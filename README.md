@@ -1,13 +1,14 @@
 
 ***
+
 **Module**: Bined
 
-**  JOB**: Encode/Decode Binary Bits
-****
+   **JOB**: Encode/Decode Binary Bits
+***
 
 # install:
    - pip install bined
-
+***
 # usage:
 
 ```python
@@ -43,8 +44,8 @@
 >>>
 >>>
 ```
-
-# that's all:
-  - this module by oseid aldary
-  - thanks for usage
-  - goodbye :)
+***
+# That's All :)
+   * This Module By Oseid Aldary
+   * Thanks For Usage
+   * Have A Nice Day...GoodBye :)
