@@ -1,19 +1,20 @@
 #!/usr/bin/python
 #==========INFO==========#
 #Date   : 2019/30/1
-#Module : Bined
+#Module : Bined - v0.0.2
 #   JOB : Convert From Multi decimal To Binary Bits Or From Multi Binary Bist To Desimal
 #CodedBy: Oseid Aldary
 #========================#
 
-def encodeSTR(text): # Convert String To Binary 
+class bined():
+ def encodeSTR(self,text): # Convert String To Binary 
         if type(text) is str:
             return ' '.join(format(ord(i),'b').zfill(8) for i in text).replace(" ","")
         elif type(text) is list or type(text) is tuple:
             return [' '.join(format(ord(i),'b').zfill(8) for i in x).replace(" ","") for x in text if type(x) is str]
         else:
             return "[!] Invalid Data {} !!!".format(type(text))
-def encodeINT(num): # Convert Number To Binary
+ def encodeINT(self,num): # Convert Number To Binary
         if type(num) is str:
             if num.isdigit():
                 num = int(num)
@@ -26,7 +27,7 @@ def encodeINT(num): # Convert Number To Binary
             return ["{0:b}".format(int(x)) for x in num if type(x) is int or x.isdigit()]
         else:
             return "[!] Invalid Data {} !!!".format(type(num))  
-def decodeINT(bnum): # Convert Binary Bits Number To Decimal
+ def decodeINT(self,bnum): # Convert Binary Bits Number To Decimal
         if type(bnum) is str:
             if bnum.isdigit():
             	check = set(bnum)
@@ -58,7 +59,7 @@ def decodeINT(bnum): # Convert Binary Bits Number To Decimal
         		return "[!] Invalid Binary Bits Number !!!"
         else:
             return "[!] Invalid Data {} !!!".format(type(bnum))
-def decodeSTR(bcode): # Convert Binary Bits String To Decimal
+ def decodeSTR(self,bcode): # Convert Binary Bits String To Decimal
     	if type(bcode) is str:
     		if bcode.isdigit():
     			check = set(bcode)
@@ -86,7 +87,7 @@ def decodeSTR(bcode): # Convert Binary Bits String To Decimal
     			return "[!] Invalid Binary Bits Strings"
     	else:
     		"[!] Invalid Data {} !!!".format(type(bcode))
-def encodeIP(IP): # Convert IPv4 To Binary
+ def encodeIP(self,IP): # Convert IPv4 To Binary
         if type(IP) is str:
             if IP.count(".") ==3:
                 return ".".join(map(str,["{0:08b}".format(int(x)) for x in IP.split(".")]))
@@ -96,7 +97,7 @@ def encodeIP(IP): # Convert IPv4 To Binary
             return [".".join(map(str,["{0:08b}".format(int(x)) for x in IP.split(".")])) for IP in IP if str(IP).count(".") == 3]
         else:
             return "[!] Invalid Data {} !!!".format(type(IP))
-def decodeIP(bIP): #Convert Binary Bits IP To Decimal
+ def decodeIP(self,bIP): #Convert Binary Bits IP To Decimal
         if type(bIP) is str:
             if bIP.count(".") ==3:
                 check = set(bIP)
@@ -122,4 +123,9 @@ def decodeIP(bIP): #Convert Binary Bits IP To Decimal
                 return "[!] Invalid IPv4 Binary Bits ips"
         else:
         	return "[!] Invalid Data {} !!!".format(type(bIP))
+
 # ---End Of File ---#Thaks For Usage :)
+encodeSTR,decodeSTR = bined().encodeSTR,bined().decodeSTR
+encodeINT,decodeINT = bined().encodeINT,bined().decodeINT
+encodeIP,decodeIP = bined().encodeIP,bined().decodeIP
+
