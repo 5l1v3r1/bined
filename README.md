@@ -13,7 +13,7 @@
 
 ```python
 >>>
->>> from bined.bined import *
+>>> from bined import *
 >>>
 >>>
 >>> encodeSTR('hello')
